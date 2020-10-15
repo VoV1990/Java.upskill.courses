@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Вычислить значение функции F(x) = x² - 3x + 9, если x <= 3
+//F(x) = 1 / x³ + 6
+
 public class FunctionX {
     static {
         System.out.println("Please enter x: ");

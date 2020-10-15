@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Найти max{min(a, b), min(c, d)}.
+
 public class MaxOfMin {
     static {
         System.out.println("Please enter four numbers: ");

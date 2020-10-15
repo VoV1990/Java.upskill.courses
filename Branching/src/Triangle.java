@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Даны два угла треугольника (в градусах).
+// Определить, существует ли такой треугольник, и если да, то будет ли он прямоугольным.
+
 public class Triangle {
     static {
         System.out.println("Please enter two corners of a triangle: ");

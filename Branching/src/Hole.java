@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича.
+// Определить, пройдет ли кирпич через отверстие.
+
 public class Hole {
     private static int heightOfHole = 5;
     private static int widthOfHole = 10;
