@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Вычислить значение выражения по формуле (все переменные принимают действительные значения):
+//(sin x + cos y / cos x - sin y) * tg xy
+
 public class TrigonometricFunction {
     static {
         System.out.println("Please enter two values: ");

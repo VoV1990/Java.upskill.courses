@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Для данной области составить линейную программу, которая печатает true,
+// если точка с координатами (х, у) принадлежит закрашенной области, и false — в противном случае
+
 public class Coordinates {
     static {
         System.out.println("Please enter coordinates x then y: ");

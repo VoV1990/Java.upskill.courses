@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Вычислить значение выражения по формуле (все переменные принимают действительные значения)
+
 public class CalculatingValues {
     static {
         System.out.println("Please enter three numbers: ");

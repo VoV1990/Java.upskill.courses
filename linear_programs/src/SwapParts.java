@@ -1,5 +1,8 @@
 import java.text.DecimalFormat;
 
+//Дано действительное число R вида nnn.ddd (три цифровых разряда в дробной и целой частях).
+// Поменять местами дробную и целую части числа и вывести полученное значение числа.
+
 public class SwapParts {
     public static double num = 123.456;
 

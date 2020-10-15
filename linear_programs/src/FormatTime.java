@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Дано натуральное число Т, которое представляет длительность прошедшего времени в секундах.
+// Вывести данное значение длительности в часах, минутах и секундах в следующей форме: ННч ММмин SSc.
+
 public class FormatTime {
     static {
         System.out.println("Please enter quantity of seconds: ");

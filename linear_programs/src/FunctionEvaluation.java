@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//Найдите  значение функции: z = ( (a – 3 ) * b / 2) + c.
+
 public class FunctionEvaluation {
     static {
         System.out.println("Please enter three numbers: ");
