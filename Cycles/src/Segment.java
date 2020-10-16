@@ -19,8 +19,11 @@ public class Segment {
     }
 
     private static void rangeOfValues(int a, int b, int h) {
+        int y;
         while (a <= b) {
-            System.out.print(a + " ");
+            int x = a;
+            y = (x > 2) ? x : -x;
+            System.out.print(y + " ");
             a += h;
         }
     }

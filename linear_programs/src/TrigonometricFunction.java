@@ -14,23 +14,8 @@ public class TrigonometricFunction {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         double x = Double.parseDouble(reader.readLine());
         double y = Double.parseDouble(reader.readLine());
-        boolean flag = checkingValues(x, y);
-        double result;
-        if(flag) {
-            result = getValue(x, y);
-            System.out.println("Result: " + result);
-        } else {
-            System.out.println("You entered incorrect values");
-        }
-    }
-    private static boolean checkingValues (double x, double y) {
-        boolean flag = false;
-        if (Double.isNaN(x) || Double.isNaN(y) || Double.isInfinite(x) || Double.isInfinite(y)) {
-            return flag;
-        } else {
-            flag = true;
-        }
-        return flag;
+
+        System.out.println("Result: " + getValue(x, y));
     }
 
     private static double getValue(double x, double y) {

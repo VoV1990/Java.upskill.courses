@@ -14,23 +14,8 @@ public class FunctionEvaluation {
         double a = Double.parseDouble(reader.readLine());
         double b = Double.parseDouble(reader.readLine());
         double c = Double.parseDouble(reader.readLine());
-        boolean flag = checkingValues(a, b, c);
-        double result;
-        if(flag) {
-            result = getValue(a, b, c);
-            System.out.println("Result: " + result);
-        } else {
-            System.out.println("You entered incorrect values");
-        }
-    }
-    private static boolean checkingValues (double a, double b, double c) {
-        boolean flag = false;
-        if (Double.isNaN(a) || Double.isNaN(b) || Double.isNaN(c)) {
-            return flag;
-        } else {
-            flag = true;
-        }
-        return flag;
+
+        System.out.println("Result: " + getValue(a, b, c));
     }
 
     private static double getValue(double a, double b, double c) {
