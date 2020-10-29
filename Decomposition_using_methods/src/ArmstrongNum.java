@@ -13,33 +13,33 @@ public class ArmstrongNum {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Please enter the number greater than 0: ");
         int k = Integer.parseInt(reader.readLine());
-        getArmstrongNum(k);
-    }
-
-    private static void getArmstrongNum(int k) {
-        List<Long> list;
-        list = calculateArmstrongNum(k);
+        List<Long> list = calculateArmstrongNum(k);
+        System.out.print("Armstrong nums: ");
         for (Long l : list) System.out.print(l + " ");
     }
 
     private static List<Long> calculateArmstrongNum(int k) {
         List<Long> list = new ArrayList<>();
-        long sum = 0;
-        int lengthOfNum;
+        long sum;
         for (long i = 1; i <= k; i++) {
-            long num = i;
-            lengthOfNum = getLength(num);
-            while (num != 0) {
-                long a = num % 10;
-                num /= 10;
-                a = getDegree(a, lengthOfNum);
-                sum += a;
-            }
+            sum = getSum(i);
             if(sum == i)
                list.add(i);
-            sum = 0;
         }
         return list;
+    }
+
+    private static long getSum(long number) {
+        long sum = 0;
+        int lengthOfNum = getLength(number);
+        long digit;
+        while (number != 0) {
+            digit = number % 10;
+            number /= 10;
+            digit = getDegree(digit, lengthOfNum);
+            sum += digit;
+        }
+        return sum;
     }
 
     private static int getLength(long num) {

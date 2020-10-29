@@ -12,7 +12,7 @@ public class NaturalArray {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Please enter the number greater than 0: ");
+        System.out.println("Please enter two numbers greater than 0: ");
         int k = Integer.parseInt(reader.readLine());
         int n = Integer.parseInt(reader.readLine());
         getArray(k, n);
@@ -21,20 +21,25 @@ public class NaturalArray {
 
     private static void getArray(int k, int n) {
         List<Integer> list = new ArrayList<>();
-        int sum = 0;
+        int sum;
         for (int i = 1; i <= n; i++) {
-            int num = i;
-            while (num != 0) {
-                int a = num % 10;
-                sum += a;
-                num /= 10;
-            }
+            sum = getSumOfDigits(i);
             if(sum == k) list.add(i);
-            sum = 0;
         }
         array = new int[list.size()];
         for (int j = 0; j < list.size(); j++)
             array[j] = list.get(j);
+    }
+
+    private static int getSumOfDigits(int num) {
+        int sum = 0;
+        int a;
+        while (num != 0) {
+            a = num % 10;
+            sum += a;
+            num /= 10;
+        }
+        return sum;
     }
 
     private static void printArray() {

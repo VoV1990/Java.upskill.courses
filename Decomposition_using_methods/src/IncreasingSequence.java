@@ -31,20 +31,26 @@ public class IncreasingSequence {
     private static void calculateSequence(int count, int n) {
         int [] array = new int[n];
         boolean stop = false;
-        int index = 0;
         for(long i = count; !stop; i++) {
-            long num = i;
-            if(isLength(num, n)) {
-                while (num != 0) {
-                    int a = (int) (num % 10);
-                    num /= 10;
-                    array[index] = a;
-                    index++;
-                }
+            if(isLength(i, n)) {
+                array = decompositionOfNumber(i, n);
             } else stop = true;
-            index = 0;
             if(isIncreasingSequence(array)) System.out.print(i + " ");
         }
+    }
+
+    private static int[] decompositionOfNumber(long num, int n) {
+        int [] array = new int[n];
+        int a;
+        for (int i = 0; i < array.length; ) {
+            while (num != 0) {
+                a = (int) (num % 10);
+                num /= 10;
+                array[i] = a;
+                i++;
+            }
+        }
+        return array;
     }
 
     private static boolean isLength(long num, int n) {
@@ -58,10 +64,10 @@ public class IncreasingSequence {
 
     private static boolean isIncreasingSequence(int[] array) {
         for(int i = 0; i < array.length - 1; i++) {
-                if(array[i] <= array[i + 1] || (array[i] - array[i + 1]) > 1) {
-                    return false;
-                }
+            if(array[i] <= array[i + 1] || (array[i] - array[i + 1]) > 1) {
+                return false;
             }
+        }
         return true;
     }
 }

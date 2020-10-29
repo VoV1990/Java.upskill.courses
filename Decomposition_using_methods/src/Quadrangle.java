@@ -9,17 +9,28 @@ public class Quadrangle {
     private static double side_t = 1;
 
     public static void main(String[] args) {
-        System.out.println(getArea());
+        System.out.println(getAreaOfQuadrangle(side_x, side_y, side_z, side_t));
     }
 
-    private static double getArea() {
-        double areaOfQuadrangle;
-        double hypotenuse = sqrt(pow(side_x, 2) + pow(side_y, 2));
-        double areaRightTriangle = (side_x * side_y) / 2;
-        double half_meter = (hypotenuse + side_t + side_z) / 2;
-        double areaSecondTriangle = sqrt(half_meter * (half_meter - side_t) *
-                (half_meter - side_z) * (half_meter - hypotenuse));
-        areaOfQuadrangle = areaRightTriangle + areaSecondTriangle;
-        return areaOfQuadrangle;
+    private static double getAreaOfQuadrangle(double x, double y, double z, double t) {
+        double hypotenuse = calculateHypotenuse(x, y);
+        double areaRightTriangle = (x * y) / 2;
+        double half_meter = calculateHalfMeter(hypotenuse, t, z);
+        double areaSecondTriangle = calculateAreaOfTriangle(half_meter, hypotenuse, t, z);
+
+        return areaRightTriangle + areaSecondTriangle;
+    }
+
+    private static double calculateHypotenuse(double x, double y) {
+        return sqrt(pow(x, 2) + pow(y, 2));
+    }
+
+    private static double calculateHalfMeter(double hypotenuse, double t, double z) {
+        return (hypotenuse + side_t + side_z) / 2;
+    }
+
+    private static double calculateAreaOfTriangle(double half_meter, double hypotenuse, double t, double z) {
+        return sqrt(half_meter * (half_meter - t) *
+                (half_meter - z) * (half_meter - hypotenuse));
     }
 }

@@ -13,17 +13,17 @@ public class AimForZero {
         System.out.println("Please enter the number greater than 1: ");
         int num = Integer.parseInt(reader.readLine());
         if(num < 10) System.out.println("Number of actions up to zero: 1");
-        else goToZero(num);
+        else System.out.println(goToZero(num));
     }
 
-    private static void goToZero(int num) {
+    private static int goToZero(int num) {
         int count = 0;
         while (num > 0) {
             int sumOfDigits = getSumOfDigits(num);
             num -= sumOfDigits;
             count++;
         }
-        System.out.println("Number of actions up to zero: " + count);
+        return count;
     }
 
     private static int getSumOfDigits(int num) {

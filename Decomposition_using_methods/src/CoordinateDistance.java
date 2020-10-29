@@ -18,7 +18,7 @@ public class CoordinateDistance {
         double [] array = new double[6];
         int index = 0;
         for (int i = 0; i < 3; i++) {
-            System.out.println("Please enter pair of coordinates x than y:");
+            System.out.println("Please enter pair of coordinates x then y:");
             double x = Double.parseDouble(reader.readLine());
             double y = Double.parseDouble(reader.readLine());
             array[index] = x;
@@ -36,10 +36,14 @@ public class CoordinateDistance {
         double y2 = coordinates[3];
         double x3 = coordinates[4];
         double y3 = coordinates[5];
-        double distance1 = sqrt(pow((x2 - x1), 2) + (pow((y2 - y1), 2)));
-        double distance2 = sqrt(pow((x3 - x2), 2) + (pow((y3 - y2), 2)));
-        double distance3 = sqrt(pow((x3 - x1), 2) + (pow((y3 - y1), 2)));
+        double distance1 = getDistance(x1, x2, y1, y2);
+        double distance2 = getDistance(x2, x3, y2, y3);
+        double distance3 = getDistance(x1, x3, y1, y3);
         getMaxDistance(distance1, distance2, distance3);
+    }
+
+    private static double getDistance(double x1, double x2, double y1, double y2) {
+        return sqrt(pow((x2 - x1), 2) + (pow((y2 - y1), 2)));
     }
 
     private static void getMaxDistance(double distance1, double distance2, double distance3) {

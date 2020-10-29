@@ -7,12 +7,18 @@ public class SumOfFactorial {
 
     public static long getSumOfFactorial () {
         long sum = 0;
-        long factorial = 1;
 
         for(int i = 1; i < 10; i+=2) {
-            factorial *= i;
-            sum += factorial;
+            sum += getFactorial(i);
         }
         return sum;
+    }
+
+    private static long getFactorial(int n) {
+        long factorial = 1;
+        for (; n > 0; n--) {
+            factorial *= n;
+        }
+        return factorial;
     }
 }

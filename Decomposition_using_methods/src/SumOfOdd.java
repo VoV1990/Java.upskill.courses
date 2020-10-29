@@ -33,24 +33,15 @@ public class SumOfOdd {
     private static void calculateOddNum(int count, int n) {
         List<Long> list = new ArrayList<>();
         boolean stop = false;
-        boolean isOdd = false;
+        boolean isOdd;
         for(long i = count; !stop; i++) {
-            long num = i;
-            if(isLength(num, n)) {
-                while (num != 0) {
-                    int a = (int) (num % 10);
-                    num /= 10;
-                    if(a % 2 == 0) {
-                        isOdd = true;
-                        break;
-                    }
-                }
+            if(isLength(i, n)) {
+                isOdd = validateOdd(i);
             } else {
                 stop = true;
-                isOdd = true;
+                isOdd = false;
             }
-            if(!isOdd) list.add(i);
-            isOdd = false;
+            if(isOdd) list.add(i);
         }
         if(list.size() > 0) getSum(list);
     }
@@ -62,6 +53,15 @@ public class SumOfOdd {
             count++;
         }
         return count == n;
+    }
+
+    private static boolean validateOdd(long num) {
+        while (num != 0) {
+            int a = (int) (num % 10);
+            num /= 10;
+            if(a % 2 == 0) return false;
+        }
+        return true;
     }
 
     private static void getSum(List<Long> list) {
