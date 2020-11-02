@@ -20,14 +20,14 @@ public class QuantityLetters {
     private static void getQuantityLetters(String str) {
         Pattern patternLowerCase = Pattern.compile("[a-z]");
         Pattern patternUpperCase = Pattern.compile("[A-Z]");
-        Matcher matcherLower = patternLowerCase.matcher(str);
-        Matcher matcherUpper = patternUpperCase.matcher(str);
-        int countOfLower = 0;
-        int countOfUpper = 0;
-        while (matcherLower.find()) countOfLower++;
-        while (matcherUpper.find()) countOfUpper++;
+        System.out.println("Quantity of letters in lower case: " + getQuantity(str, patternLowerCase));
+        System.out.println("Quantity of letters in upper case: " + getQuantity(str, patternUpperCase));
+    }
 
-        System.out.println("Quantity of letters in lower case: " + countOfLower);
-        System.out.println("Quantity of letters in upper case: " + countOfUpper);
+    private static int getQuantity(String str, Pattern pattern) {
+        Matcher matcher = pattern.matcher(str);
+        int count = 0;
+        while (matcher.find()) count++;
+        return count;
     }
 }
