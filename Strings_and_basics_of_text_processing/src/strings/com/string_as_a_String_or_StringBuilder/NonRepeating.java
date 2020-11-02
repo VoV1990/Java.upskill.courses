@@ -32,6 +32,6 @@ public class NonRepeating {
         for (Character c : set) {
             builder.append(c);
         }
-        return builder.toString();
+        return builder.toString().trim();
     }
 }

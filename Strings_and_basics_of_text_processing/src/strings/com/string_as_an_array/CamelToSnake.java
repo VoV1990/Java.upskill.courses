@@ -9,18 +9,17 @@ public class CamelToSnake {
     }
 
     private static String toSnakeCase(String string) {
+        StringBuilder snakeStr = new StringBuilder();
         char[] symbols = string.toCharArray();
-        String snakeStr = "";
         for (int i = 0; i < symbols.length; i++) {
             if(Character.isUpperCase(symbols[i]) && i == 0) {
-                snakeStr = snakeStr + Character.toLowerCase(symbols[i]);
+                snakeStr.append(Character.toLowerCase(symbols[i]));
             } else if(Character.isUpperCase(symbols[i]) && i > 0) {
-                snakeStr = snakeStr + "_";
-                snakeStr = snakeStr + Character.toLowerCase(symbols[i]);
+                snakeStr.append("_").append(Character.toLowerCase(symbols[i]));
             } else {
-                snakeStr = snakeStr + symbols[i];
+                snakeStr.append(symbols[i]);
             }
         }
-        return snakeStr;
+        return snakeStr.toString();
     }
 }

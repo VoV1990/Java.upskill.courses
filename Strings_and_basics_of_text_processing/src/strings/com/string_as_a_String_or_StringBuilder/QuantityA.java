@@ -17,10 +17,9 @@ public class QuantityA {
     }
 
     private static int getQuantityA(String str) {
-        char[] letters = str.toCharArray();
         int count = 0;
-        for (Character c : letters) {
-            if(c.equals('a')) count++;
+        for(int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == 'a') count++;
         }
         return count;
     }

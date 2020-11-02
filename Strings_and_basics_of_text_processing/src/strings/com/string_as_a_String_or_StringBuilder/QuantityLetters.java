@@ -18,20 +18,15 @@ public class QuantityLetters {
     }
 
     private static void getQuantityLetters(String str) {
-        Pattern pattern1 = Pattern.compile("[a-z]");
-        Pattern pattern2 = Pattern.compile("[A-Z]");
+        Pattern patternLowerCase = Pattern.compile("[a-z]");
+        Pattern patternUpperCase = Pattern.compile("[A-Z]");
+        Matcher matcherLower = patternLowerCase.matcher(str);
+        Matcher matcherUpper = patternUpperCase.matcher(str);
         int countOfLower = 0;
         int countOfUpper = 0;
-        char[] letters = str.toCharArray();
-        for (Character c : letters) {
-            String letter = Character.toString(c);
-            Matcher matcher1 = pattern1.matcher(letter);
-            Matcher matcher2 = pattern2.matcher(letter);
-            if(matcher1.matches())
-                countOfLower++;
-            else if(matcher2.matches())
-                countOfUpper++;
-        }
+        while (matcherLower.find()) countOfLower++;
+        while (matcherUpper.find()) countOfUpper++;
+
         System.out.println("Quantity of letters in lower case: " + countOfLower);
         System.out.println("Quantity of letters in upper case: " + countOfUpper);
     }

@@ -16,11 +16,8 @@ public class DoubleLetters {
 
     private static String toDoubleLetters(String str) {
         StringBuilder builder = new StringBuilder();
-        char[] letters = str.toCharArray();
-        for (Character c : letters) {
-            for (int i = 0; i < 2; i++) {
-                builder.append(c);
-            }
+        for (int i = 0; i < str.length(); i ++) {
+            builder.append(str.charAt(i)).append(str.charAt(i));
         }
         return builder.toString();
     }
